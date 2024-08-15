@@ -2,15 +2,18 @@
     <div>
         <form @submit.prevent>
                 <h4>Создание поста</h4>
-                <input v-model="post.title"  class="input" type="text" placeholder="Name" />
-                <input v-model="post.body"  class="input" type="text" placeholder="Description" />
-                <button class="btn" @click="createPost" >Add</button>
+                <my-input v-model="post.title" type="text" placeholder="Name" />
+                <my-input v-model="post.body" type="text" placeholder="Description" />
+                <my-button class="btn" style="align-self: flex-end; margin-top: 15px;" @click="createPost" >Add</my-button>
         </form>
     </div>
 </template>
 
 <script>
+
+
 export default {
+
 props:{
     posts: {
             type: Array,
@@ -34,7 +37,7 @@ props:{
                 body : '' 
             }
         }
-    }
+    },
 }
 </script>
 
@@ -48,13 +51,5 @@ props:{
     form{
         display: flex;
         flex-direction: column;
-    }
-    .btn{
-        padding: 10px, 15px;
-        background: none;
-        color: teal;
-        margin-top: 15px;
-        align-self: flex-end;
-        border: 1px solid teal;
     }
 </style>
