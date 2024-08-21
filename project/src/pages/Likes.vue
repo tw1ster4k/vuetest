@@ -1,13 +1,13 @@
 <template>
     <div class="div">
-        <button class="btn btn__like">Like</button>
-        <button class="btn btn__dislike">Dislike</button>
+        <button @click="$store.commit(`incrementLike`)" class="btn btn__like">Like</button>
+        <button @click="$store.commit('incrementDislike')" class="btn btn__dislike">Dislike</button>
     </div>
 </template>
 
 <script>
-export default {
 
+export default {
 }
 </script>
 

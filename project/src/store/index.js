@@ -1,21 +1,25 @@
-import { createApp } from "vue";
-import {createStore} from "vuex";
+import { createStore } from "vuex"
 
-const store = createStore({
-    state(){
-        return{
-            likes:0,
-            dislikes:0
+export default createStore({
+    state:{
+        likes:0,
+        dislikes:0
+    },
+    getters:{
+
+    },
+    mutations: {
+        incrementLike(state){
+            state.likes += 1
+        },
+        incrementDislike(state){
+            state.dislikes += 1
         }
     },
-    mutations:{
-        addLike(state){
-            state.likes++
-        },
-        addDislike(state){
-            state.dislikes++
-        }
-    }
-})
+    actions:{
 
-const app = createApp({})
+    },
+    modules:{
+
+    }
+}) 
